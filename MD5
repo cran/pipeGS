@@ -1,0 +1,14 @@
+87394d5534b06a00bc0c38d64c7e1080 *DESCRIPTION
+02b1d57416c979167b77e35d4b9d3b16 *NAMESPACE
+23df4f378e358ebb52eb39aaefc0687b *R/functiondef.R
+a132436ebb3b48509e95c33bc497a560 *R/main.R
+49d7b0f1a7daa4d90ee941d1682b77b7 *R/montecarlo.R
+0950a6f797c744767aac146148c3bbbc *R/nested.R
+297c3fd79b87fcb012c04004838ff943 *R/normalize.R
+5a0e68d28bd951aa10e4f84224ac8853 *R/parallelexact.R
+a6a1045258c4027c55039c956aa1b477 *R/pipegs.R
+45b3f2c983f5f7d4f84561ba12242cd5 *R/saddlepoint.R
+8e5fc3dac8ea548d1ae2b0cf5e4acb0b *R/stolarsky.R
+a19f14e150dfb176670d3f04be3a15ef *man/get.phat.linear.Rd
+ecc9db51ee63535eb53afa72ba1b75ff *man/get.phat.quadratic.Rd
+3bfa50ead266ad944e65ad354ff8ecdb *man/pipegs.Rd
