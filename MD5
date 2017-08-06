@@ -1,4 +1,4 @@
-87394d5534b06a00bc0c38d64c7e1080 *DESCRIPTION
+be75539bcb601f11e15aad37ffb2df71 *DESCRIPTION
 02b1d57416c979167b77e35d4b9d3b16 *NAMESPACE
 23df4f378e358ebb52eb39aaefc0687b *R/functiondef.R
 a132436ebb3b48509e95c33bc497a560 *R/main.R
@@ -8,7 +8,7 @@ a132436ebb3b48509e95c33bc497a560 *R/main.R
 5a0e68d28bd951aa10e4f84224ac8853 *R/parallelexact.R
 a6a1045258c4027c55039c956aa1b477 *R/pipegs.R
 45b3f2c983f5f7d4f84561ba12242cd5 *R/saddlepoint.R
-8e5fc3dac8ea548d1ae2b0cf5e4acb0b *R/stolarsky.R
+3839d8e71a2bcdf0afbddab0bfc36799 *R/stolarsky.R
 a19f14e150dfb176670d3f04be3a15ef *man/get.phat.linear.Rd
 ecc9db51ee63535eb53afa72ba1b75ff *man/get.phat.quadratic.Rd
 3bfa50ead266ad944e65ad354ff8ecdb *man/pipegs.Rd

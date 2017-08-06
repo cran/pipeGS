@@ -81,9 +81,9 @@ get.stolarsky <- function(m0, m1, x, rho.hat, x0 = NULL, x1 = NULL, two.sided = 
                 return(0)
             }else{
                 if(t >= 0){
-                    return(nsphereS(d-1)/nsphereS(d)*integrate(function(s) (1-s^2)^(d/2 - 1)*get.phat((t - s*ur)/sqrt(1-s^2)/sqrt(1-ur^2), d-1), t, 1, rel.tol = rel.tol)$value)
+                    return(exp(lnsphereS(d-1)-lnsphereS(d))*integrate(function(s) (1-s^2)^(d/2 - 1)*get.phat((t - s*ur)/sqrt(1-s^2)/sqrt(1-ur^2), d-1), t, 1, rel.tol = rel.tol)$value)
                 }else{
-                    return(nsphereS(d-1)/nsphereS(d)*integrate(function(s) (1-s^2)^(d/2 - 1)*(1-get.phat((t - s*ur)/sqrt(1-s^2)/sqrt(1-ur^2), d-1)), -1, t, rel.tol = rel.tol)$value)
+                    return(exp(lnsphereS(d-1)-lnsphereS(d))*integrate(function(s) (1-s^2)^(d/2 - 1)*(1-get.phat((t - s*ur)/sqrt(1-s^2)/sqrt(1-ur^2), d-1)), -1, t, rel.tol = rel.tol)$value)
                 }
             }
         }
@@ -184,7 +184,7 @@ get.stolarsky <- function(m0, m1, x, rho.hat, x0 = NULL, x1 = NULL, two.sided = 
                 if(abs(ukstar - 1) < 10^(-10)){
                     lower <- max(rho1, rho2, -1)
                     if(lower < 1){
-                        return(integrate(function(t) (1-t^2)^(d/2-3/2), lower, 1, rel.tol= rel.tol)$value*nsphereS(d-2)/nsphereS(d-1))
+                        return(integrate(function(t) (1-t^2)^(d/2-3/2), lower, 1, rel.tol= rel.tol)$value*exp(lnsphereS(d-2)-lnsphereS(d-1)))
                     }else{
                         return(0)
                     }
@@ -192,14 +192,14 @@ get.stolarsky <- function(m0, m1, x, rho.hat, x0 = NULL, x1 = NULL, two.sided = 
                     lower <- max(-1, rho1)
                     upper <- min(1, -rho2)
                     if(lower < upper){
-                        return(integrate(function(t) (1-t^2)^(d/2-3/2), lower, upper, rel.tol= rel.tol)$value*nsphereS(d-2)/nsphereS(d-1))
+                        return(integrate(function(t) (1-t^2)^(d/2-3/2), lower, upper, rel.tol= rel.tol)$value*exp(lnsphereS(d-2)-lnsphereS(d-1)))
                     }else{
                         return(0)
                     }
                 }else{
                     lower <- max(-1, rho1)
                     if(lower < 1){
-                        return(integrate(function(t) (1-t^2)^(d/2-3/2)*get.phat((rho2 - t*ukstar)/sqrt(1-t^2)/sqrt(1-ukstar^2), d-2), lower, 1, rel.tol= rel.tol)$value*nsphereS(d-2)/nsphereS(d-1))
+                        return(integrate(function(t) (1-t^2)^(d/2-3/2)*get.phat((rho2 - t*ukstar)/sqrt(1-t^2)/sqrt(1-ukstar^2), d-2), lower, 1, rel.tol= rel.tol)$value*exp(lnsphereS(d-2)-lnsphereS(d-1)))
                     }else{
                         return(0)
                     }
