@@ -25,7 +25,15 @@ get.saddle <- function(x0, x1){
             return(list(saddle1 = 1/choose(m0 + m1, m0)))
     }
     K <- function(x, p, q){
-        return(log(p*exp(q*x) + q*exp(-p*x)))
+        a = p*exp(q*x)
+        b = q*exp(-p*x)
+        if(a == Inf){
+            return(log(p) + q*x)
+        }else if(b == Inf){
+            return(log(q) - p*x)
+        }else{
+            return(log(a + b))
+        }
     }
 
     K1 <- function(x,p ,q){
@@ -149,7 +157,7 @@ get.saddle <- function(x0, x1){
     K3seq <- sapply(1:N, function(i) K3(x[i], p, q))
     m.n <- 1/sqrt(w)*sum(a*K1seq)
     sigmau2 <- 1/w*(sum(a^2*K2seq) - sum(a*K2seq)^2/sum(K2seq))
-    A1 <- Q(a, u, w, alpha, p, q)*exp(-u*m.n + 1/2*u^2*sigmau2)*(1-pnorm(u*sqrt(sigmau2))) #saddle point estimation 1
+    A1 <- exp(logQ(a, u, w, alpha, p, q) -u*m.n + 1/2*u^2*sigmau2)*(1-pnorm(u*sqrt(sigmau2))) #saddle point estimation 1
     if(is.nan(A1)){
         A1 <- logQ(a, u, w, alpha, p, q) + (-u*m.n + 1/2*u^2*sigmau2) + lognormtail(u*sqrt(sigmau2))
         A1 <- exp(A1)
