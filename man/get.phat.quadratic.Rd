@@ -47,4 +47,3 @@ get.phat.quadratic(x, y, method = "nested", do.sd = TRUE)
 get.phat.quadratic(x, y, method = "mc", do.sd = TRUE)
 get.phat.quadratic(x, y, method = "exact", do.sd = TRUE)
 }
-

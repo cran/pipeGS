@@ -164,7 +164,7 @@ get.saddle <- function(x0, x1){
     }
     H <- sum(a*K2seq)/sum(K2seq)
     k1 <- (sum(a*K3seq)/sum(K2seq) - sum(K3seq)*sum(a*K2seq)/sum(K2seq)^2)/sqrt(sigmau2)
-    k3 <- (sum(a^3*K3seq) - 3*sum(a^2*K3seq*H) + 3*sum(a*K3seq*H^2 - H^3))/sqrt(sigmau2)^3
+    k3 <- (sum(a^3*K3seq) - 3*sum(a^2*K3seq*H) + 3*sum(a*K3seq*H^2) - H^3)/sqrt(sigmau2)^3
     B1 <- A1*(1- 1/2*k1*W1(u*sqrt(sigmau2)) + 1/6*k3*W3(u*sqrt(sigmau2)))
-    return(list(saddle1 = A1*2, saddle2 = B1*2))
+    return(list(saddle1 = A1*2))
 }

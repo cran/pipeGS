@@ -4,7 +4,7 @@
 \alias{get.phat.linear}
 \title{Get the pvalue for the linear statistic}
 \usage{
-get.phat.linear(x, y, method = c("saddlepoint", "phat1", "phat2", "phat3",
+get.phat.linear(x, y, method = c("phat2", "saddlepoint", "phat1", "phat3",
   "nested", "mc", "exact"), N.mc = 10^3, mc.cores = 1, N.level = 1000,
   q = 0.2, B = 5 * length(x), do.sd = FALSE)
 }
@@ -51,4 +51,3 @@ get.phat.linear(x, y, method = "nested", do.sd = TRUE)
 get.phat.linear(x, y, method = "mc", do.sd = TRUE)
 get.phat.linear(x, y, method = "exact", do.sd = TRUE)
 }
-

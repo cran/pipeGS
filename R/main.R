@@ -27,7 +27,7 @@
 #' get.phat.linear(x, y, method = "nested", do.sd = TRUE)
 #' get.phat.linear(x, y, method = "mc", do.sd = TRUE)
 #' get.phat.linear(x, y, method = "exact", do.sd = TRUE)
-get.phat.linear <- function(x, y, method = c("saddlepoint", "phat1","phat2", "phat3", "nested", "mc", "exact"), N.mc = 10^3,mc.cores = 1, N.level = 1000, q = 0.2, B = 5*length(x), do.sd = FALSE){
+get.phat.linear <- function(x, y, method = c("phat2", "saddlepoint", "phat1", "phat3", "nested", "mc", "exact"), N.mc = 10^3,mc.cores = 1, N.level = 1000, q = 0.2, B = 5*length(x), do.sd = FALSE){
     if(!all(unique(x) %in% c(0, 1))){
         stop("x needs to be binary 0/1 vector")
     }
@@ -49,7 +49,7 @@ get.phat.linear <- function(x, y, method = c("saddlepoint", "phat1","phat2", "ph
     x1 <- y.norm[m1.ind]
     rho.hat <- sum(x.norm*y.norm)
     method <- match.arg(as.character(method),
-                        c("saddlepoint", "phat1","phat2", "phat3", "nested", "mc", "exact"))
+                        c("phat2", "saddlepoint", "phat1", "phat3", "nested", "mc", "exact"))
 
     if(method == "saddlepoint"){
         result <- get.saddle(x0, x1)

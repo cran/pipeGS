@@ -8,4 +8,3 @@
 \description{
 The package calculates the approximation for permutation p-values of linear statistic
 }
-
